@@ -15,15 +15,3 @@ Responsive UI: Works across different screen sizes with a clean, modern UI.
 Flutter Web 🌐
 Cubit (flutter_bloc) 🏗️
 HTML DOM Integration (dart:html) 🖼️
-
-📂 Project Structure
-/lib
-│── main.dart              # Entry point of the app
-│── /cubit
-│   ├── image_cubit.dart   # Handles image loading state
-│   ├── image_state.dart   # Defines various states (Initial, Loaded, Error)
-│── /ui
-│   ├── home_page.dart     # Main screen with input and image display
-│   ├── image_viewer.dart  # Widget to display the loaded image
-│── /widgets
-│   ├── context_menu.dart  # Floating context menu for full-screen toggle
