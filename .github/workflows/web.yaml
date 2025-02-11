@@ -27,30 +27,63 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Runs on Ubuntu
-
-  mac-build:
-    runs-on: macos-latest  # Runs on macOS
-
-  windows-build:
-    runs-on: windows-latest  # Runs on Windows
-
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Setup Flutter
-        uses: subosito/flutter-action@v1
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: 3.x  # Replace with your Flutter version
 
-      - name: Build Web App
-        run: flutter build web --release --base-href="/flutter-web-image-viewer/"
+      - name: Build Flutter Web
+        run: flutter build web --release --base-href="/REPO_NAME/"
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+  mac-build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          branch: main
-          folder: build/web
+          flutter-version: 3.x
+
+      - name: Build Flutter iOS
+        run: flutter build ios --release
+
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.x
+
+      - name: Build Flutter Windows
+        run: flutter build windows --release
+
+
+#    steps:
+#      - name: Checkout Repository
+#        uses: actions/checkout@v2
+#
+#      - name: Setup Flutter
+#        uses: subosito/flutter-action@v1
+#        with:
+#          flutter-version: 3.x  # Replace with your Flutter version
+#
+#      - name: Build Web App
+#        run: flutter build web --release --base-href="/flutter-web-image-viewer/"
+#
+#      - name: Deploy to GitHub Pages
+#        uses: JamesIves/github-pages-deploy-action@v4
+#        with:
+#          branch: main
+#          folder: build/web
 
