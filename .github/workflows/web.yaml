@@ -40,35 +40,6 @@ jobs:
       - name: Build Flutter Web
         run: flutter build web --release --base-href="/flutter-web-image-viewer/"
 
-  mac-build:
-    runs-on: macos-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: 3.x
-
-      - name: Build Flutter iOS
-        run: flutter build ios --release
-
-  windows-build:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: 3.x
-
-      - name: Build Flutter Windows
-        run: flutter build windows --release
-
-
 
 #    steps:
 #      - name: Checkout Repository
