@@ -38,7 +38,7 @@ jobs:
           flutter-version: 3.x  # Replace with your Flutter version
 
       - name: Build Flutter Web
-        run: flutter build web --release --base-href="/REPO_NAME/"
+        run: flutter build web --release --base-href="/flutter-web-image-viewer/"
 
   mac-build:
     runs-on: macos-latest
